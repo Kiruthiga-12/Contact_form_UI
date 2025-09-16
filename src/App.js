@@ -1,10 +1,14 @@
 
 import ContactForm from "./ContactForm";
 import { ThemeProvider,createTheme,FormControlLabel,Switch ,useMediaQuery} from "@mui/material";
-import { useState} from "react";
+import { useState,useEffect} from "react";
 import './App.css';
 import ContactFormMobile from "./ContactFormMobile";
 function App() {
+
+  useEffect(()=>{
+  document.title = 'Contact Form UI';
+  },[])
 
   const lightTheme = createTheme({
    mode:{

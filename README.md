@@ -1,4 +1,4 @@
-Contact form :
+Contact form UI
 
 Project created using 
 react
@@ -16,8 +16,9 @@ Your users should be able to:
 - Receive form validation messages if:
   - A required field has been missed
   - The email address is not formatted correctly
-- Complete the form only using their keyboard
 - Have inputs, error messages, and the success message announced on their screen reader
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
 - Dark and Light Mode theme switching.
+
+Live Demo :https://contact-form-ui-7sl2.onrender.com/
