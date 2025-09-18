@@ -30,7 +30,10 @@ const submitData=(data)=>{
 <Box className ='grid_container'>
 
 <label htmlFor='First_Name' className='label1' >First Name <sup>*</sup></label>
-<Controller name='First_Name' className='text1' control={control} rules={{required:'First Name is required'}}
+<Controller name='First_Name' className='text1' control={control} rules={{required:'First Name is required',pattern: {
+            value: /^[a-zA-Z]{3,}$/, 
+            message: 'Please enter a valid First name',
+          }}}
 render={({field,fieldState})=>(<TextField  {...field}  id='First_Name' type='text' size='small'  autoComplete='off' sx={{'& .MuiInputBase-input':{fontSize:"0.8rem"},'& .MuiOutlinedInput-input':{color:theme.mode.light.color,'&:hover':{cursor:'pointer'}},'& .MuiOutlinedInput-root': {
           '&.Mui-focused fieldset': {
             borderColor: theme.mode.light.buttonColor.backgroundColor
@@ -48,7 +51,10 @@ render={({field,fieldState})=>(<TextField  {...field}  id='First_Name' type='tex
 
 
 <label htmlFor='Last_Name' className='label2'>Last Name <sup>*</sup></label>
-<Controller control={control} className='text2' name='Last_Name' rules={{required:'Last Name is required'}} render={({field,fieldState})=>(<TextField  {...field} type='text' size='small'  id='Last_Name' autoComplete='off' error={!!fieldState.error} 
+<Controller control={control} className='text2' name='Last_Name' rules={{required:'Last Name is required',pattern: {
+            value: /^[a-zA-Z]{3,}$/, 
+            message: 'Please enter a valid Last name',
+          }}} render={({field,fieldState})=>(<TextField  {...field} type='text' size='small'  id='Last_Name' autoComplete='off' error={!!fieldState.error} 
 helperText={fieldState.error? fieldState.error.message : ''}  FormHelperTextProps={{style:{color:theme.mode.light.error.color}}}  sx={{'& .MuiInputBase-input':{fontSize:"0.8rem"},'& .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline': {
     borderColor: theme.mode.light.error.color 
   },'& .MuiOutlinedInput-input':{color:theme.mode.light.color,'&:hover':{cursor:'pointer'}},'& .MuiOutlinedInput-root': {
@@ -65,7 +71,7 @@ helperText={fieldState.error? fieldState.error.message : ''}  FormHelperTextProp
 
 
 <label htmlFor='Email'>Email <sup>*</sup></label>
-<Controller control={control} name='Email' rules={{required:'Email is required',pattern:{value: /^[a-z-A-Z0-9]{1,}@[a-zA-Z]{1,}.[a-zA-Z]{1,}$/,message:'Please enter valid email address'}}}
+<Controller control={control} name='Email' rules={{required:'Email is required',pattern:{value: /^[a-z-A-Z0-9]{1,}@[a-zA-Z]{1,}.+[a-zA-Z]{1,}$/,message:'Please enter valid email address'}}}
 render={({field,fieldState})=>(<TextField {...field} type='text' size='small'  autoComplete='off' id='Email' fullWidth  error={!!fieldState.error} helperText={fieldState.error? fieldState.error.message : ''} FormHelperTextProps={{style:{color:theme.mode.light.error.color}}} sx={{'& .MuiInputBase-input':{fontSize:"0.8rem"},'& .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline': {
     borderColor: theme.mode.light.error.color 
   },'& .MuiOutlinedInput-input':{color:theme.mode.light.color,'&:hover':{cursor:'pointer'}},'& .MuiOutlinedInput-root': {
