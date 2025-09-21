@@ -31,7 +31,7 @@ const submitData=(data)=>{
 
 <label htmlFor='First_Name' className='label1' >First Name <sup>*</sup></label>
 <Controller name='First_Name' className='text1' control={control} rules={{required:'First Name is required',pattern: {
-            value: /^[a-zA-Z]{3,}$/, 
+            value: /^[a-zA-Z]{3,} [a-zA-Z]{2,}$/gi, 
             message: 'Please enter a valid First name',
           }}}
 render={({field,fieldState})=>(<TextField  {...field}  id='First_Name' type='text' size='small'  autoComplete='off' sx={{'& .MuiInputBase-input':{fontSize:"0.8rem"},'& .MuiOutlinedInput-input':{color:theme.mode.light.color,'&:hover':{cursor:'pointer'}},'& .MuiOutlinedInput-root': {
